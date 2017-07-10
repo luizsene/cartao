@@ -1,0 +1,298 @@
+.mobile {
+  display: block; }
+
+.no-mobile {
+  display: none; }
+
+.mobile-capitalized {
+  text-transform: capitalize; }
+
+#cartao-checkout-back-link,
+#cartao-checkout-close-link {
+  display: inline-block;
+  width: 30px; }
+
+#cartao-checkout-back-link span.no-mobile {
+  display: none; }
+
+#cartao-checkout-close-link {
+  font-size: 25px;
+  text-align: right; }
+
+#cartao-checkout-footer {
+  font-size: 8px; }
+
+#cartao-checkout-step-title {
+  margin: 0 0 10px;
+  font-size: 22px; }
+
+.cartao-checkout-step-indicator {
+  margin: 0;
+  padding: 0;
+  margin-top: -20px;
+  padding-top: 25px;
+  line-height: 10px;
+  height: 16px; }
+  .cartao-checkout-step-indicator.no-mobile {
+    display: none; }
+  .cartao-checkout-step-indicator.mobile {
+    display: inline-block; }
+  .cartao-checkout-step-indicator li {
+    height: 10px;
+    line-height: 10px; }
+
+#cartao-checkout-ui {
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch; }
+
+#cartao-modal-box {
+  width: 90%;
+  margin-bottom: 15px; }
+  #cartao-modal-box button {
+    width: 100%;
+    box-sizing: border-box; }
+  #cartao-modal-box .cartao-checkout-input-container {
+    width: 100%;
+    box-sizing: border-box; }
+    #cartao-modal-box .cartao-checkout-input-container .brand-icon {
+      position: absolute;
+      display: block;
+      right: -44px;
+      top: 50%;
+      margin-top: -15px;
+      width: 44px;
+      height: 30px;
+      -webkit-transition: right 0.25s ease-out;
+      -moz-transition: right 0.25s ease-out;
+      -o-transition: right 0.25s ease-out;
+      -ms-transition: right 0.25s ease-out;
+      transition: right 0.25s ease-out; }
+    #cartao-modal-box .cartao-checkout-input-container.brand-display.amex .brand-icon, #cartao-modal-box .cartao-checkout-input-container.brand-display.aura .brand-icon, #cartao-modal-box .cartao-checkout-input-container.brand-display.diners .brand-icon, #cartao-modal-box .cartao-checkout-input-container.brand-display.discover .brand-icon, #cartao-modal-box .cartao-checkout-input-container.brand-display.elo .brand-icon, #cartao-modal-box .cartao-checkout-input-container.brand-display.hipercard .brand-icon, #cartao-modal-box .cartao-checkout-input-container.brand-display.jcb .brand-icon, #cartao-modal-box .cartao-checkout-input-container.brand-display.mastercard .brand-icon, #cartao-modal-box .cartao-checkout-input-container.brand-display.visa .brand-icon {
+      right: 10px; }
+    #cartao-modal-box .cartao-checkout-input-container.brand-display.amex .brand-icon {
+      background-image: url("../images/icon-bandeira-amex.png"); }
+    #cartao-modal-box .cartao-checkout-input-container.brand-display.aura .brand-icon {
+      background-image: url("../images/icon-bandeira-aura.png"); }
+    #cartao-modal-box .cartao-checkout-input-container.brand-display.diners .brand-icon {
+      background-image: url("../images/icon-bandeira-diners.png"); }
+    #cartao-modal-box .cartao-checkout-input-container.brand-display.discover .brand-icon {
+      background-image: url("../images/icon-bandeira-discover.png"); }
+    #cartao-modal-box .cartao-checkout-input-container.brand-display.elo .brand-icon {
+      background-image: url("../images/icon-bandeira-elo.png"); }
+    #cartao-modal-box .cartao-checkout-input-container.brand-display.hipercard .brand-icon {
+      background-image: url("../images/icon-bandeira-hipercard.png"); }
+    #cartao-modal-box .cartao-checkout-input-container.brand-display.jcb .brand-icon {
+      background-image: url("../images/icon-bandeira-jcb.png"); }
+    #cartao-modal-box .cartao-checkout-input-container.brand-display.mastercard .brand-icon {
+      background-image: url("../images/icon-bandeira-mastercard.png"); }
+    #cartao-modal-box .cartao-checkout-input-container.brand-display.visa .brand-icon {
+      background-image: url("../images/icon-bandeira-visa.png"); }
+    #cartao-modal-box .cartao-checkout-input-container.brand-display.cartao-success .cartao-checkout-success-mark {
+      display: none; }
+    #cartao-modal-box .cartao-checkout-input-container.brand-display.cartao-error .brand-icon {
+      right: -44px; }
+
+.cartao-checkout-step {
+  width: 100%; }
+
+#cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-expiration-container {
+  margin-right: 2%;
+  float: left;
+  width: 58%;
+  box-sizing: border-box; }
+  #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-expiration-container input, #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-expiration-container .pretty-select-container {
+    box-sizing: border-box;
+    width: 100%; }
+  #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-expiration-container .pretty-select-container span {
+    box-sizing: border-box;
+    width: 100%; }
+  #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-expiration-container.cartao-success input, #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-expiration-container.cartao-success .pretty-select-container, #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-expiration-container.cartao-error input, #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-expiration-container.cartao-error .pretty-select-container {
+    width: 100%;
+    padding-right: 50px; }
+
+#cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-cvv-container {
+  float: left;
+  width: 40%;
+  box-sizing: border-box; }
+  #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-cvv-container input, #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-cvv-container .pretty-select-container {
+    box-sizing: border-box;
+    width: 100%; }
+  #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-cvv-container .pretty-select-container span {
+    box-sizing: border-box;
+    width: 100%; }
+  #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-cvv-container.cartao-success input, #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-cvv-container.cartao-success .pretty-select-container, #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-cvv-container.cartao-error input, #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-cvv-container.cartao-error .pretty-select-container {
+    width: 100%;
+    padding-right: 50px; }
+
+#cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-expiration-container.has-installments {
+  margin-right: 2%;
+  float: left;
+  width: 58%;
+  box-sizing: border-box; }
+  #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-expiration-container.has-installments input, #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-expiration-container.has-installments .pretty-select-container {
+    box-sizing: border-box;
+    width: 100%; }
+  #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-expiration-container.has-installments .pretty-select-container span {
+    box-sizing: border-box;
+    width: 100%; }
+  #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-expiration-container.has-installments.cartao-success input, #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-expiration-container.has-installments.cartao-success .pretty-select-container, #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-expiration-container.has-installments.cartao-error input, #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-expiration-container.has-installments.cartao-error .pretty-select-container {
+    width: 100%;
+    padding-right: 50px; }
+
+#cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-cvv-container.has-installments {
+  margin-right: 0;
+  float: left;
+  width: 40%;
+  box-sizing: border-box; }
+  #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-cvv-container.has-installments input, #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-cvv-container.has-installments .pretty-select-container {
+    box-sizing: border-box;
+    width: 100%; }
+  #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-cvv-container.has-installments .pretty-select-container span {
+    box-sizing: border-box;
+    width: 100%; }
+  #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-cvv-container.has-installments.cartao-success input, #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-cvv-container.has-installments.cartao-success .pretty-select-container, #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-cvv-container.has-installments.cartao-error input, #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-cvv-container.has-installments.cartao-error .pretty-select-container {
+    width: 100%;
+    padding-right: 50px; }
+
+#cartao-modal-box-step-credit-card-information #cartao-checkout-installments-container {
+  float: left;
+  width: 100%;
+  box-sizing: border-box; }
+  #cartao-modal-box-step-credit-card-information #cartao-checkout-installments-container input, #cartao-modal-box-step-credit-card-information #cartao-checkout-installments-container .pretty-select-container {
+    box-sizing: border-box;
+    width: 100%; }
+  #cartao-modal-box-step-credit-card-information #cartao-checkout-installments-container .pretty-select-container span {
+    box-sizing: border-box;
+    width: 100%; }
+  #cartao-modal-box-step-credit-card-information #cartao-checkout-installments-container.cartao-success input, #cartao-modal-box-step-credit-card-information #cartao-checkout-installments-container.cartao-success .pretty-select-container, #cartao-modal-box-step-credit-card-information #cartao-checkout-installments-container.cartao-error input, #cartao-modal-box-step-credit-card-information #cartao-checkout-installments-container.cartao-error .pretty-select-container {
+    width: 100%;
+    padding-right: 50px; }
+
+#cartao-modal-box-step-buyer-information #cartao-checkout-ddd-field-container {
+  margin-right: 2%;
+  float: left;
+  width: 30%;
+  box-sizing: border-box; }
+  #cartao-modal-box-step-buyer-information #cartao-checkout-ddd-field-container input, #cartao-modal-box-step-buyer-information #cartao-checkout-ddd-field-container .pretty-select-container {
+    box-sizing: border-box;
+    width: 100%; }
+  #cartao-modal-box-step-buyer-information #cartao-checkout-ddd-field-container .pretty-select-container span {
+    box-sizing: border-box;
+    width: 100%; }
+  #cartao-modal-box-step-buyer-information #cartao-checkout-ddd-field-container.cartao-success input, #cartao-modal-box-step-buyer-information #cartao-checkout-ddd-field-container.cartao-success .pretty-select-container, #cartao-modal-box-step-buyer-information #cartao-checkout-ddd-field-container.cartao-error input, #cartao-modal-box-step-buyer-information #cartao-checkout-ddd-field-container.cartao-error .pretty-select-container {
+    width: 100%;
+    padding-right: 50px; }
+
+#cartao-modal-box-step-buyer-information #cartao-checkout-phone-number-field-container {
+  float: left;
+  width: 68%;
+  box-sizing: border-box; }
+  #cartao-modal-box-step-buyer-information #cartao-checkout-phone-number-field-container input, #cartao-modal-box-step-buyer-information #cartao-checkout-phone-number-field-container .pretty-select-container {
+    box-sizing: border-box;
+    width: 100%; }
+  #cartao-modal-box-step-buyer-information #cartao-checkout-phone-number-field-container .pretty-select-container span {
+    box-sizing: border-box;
+    width: 100%; }
+  #cartao-modal-box-step-buyer-information #cartao-checkout-phone-number-field-container.cartao-success input, #cartao-modal-box-step-buyer-information #cartao-checkout-phone-number-field-container.cartao-success .pretty-select-container, #cartao-modal-box-step-buyer-information #cartao-checkout-phone-number-field-container.cartao-error input, #cartao-modal-box-step-buyer-information #cartao-checkout-phone-number-field-container.cartao-error .pretty-select-container {
+    width: 100%;
+    padding-right: 50px; }
+
+#cartao-modal-box-step-customer-address-information #cartao-checkout-address-street-field-container {
+  margin-right: 2%;
+  float: left;
+  width: 66%;
+  box-sizing: border-box; }
+  #cartao-modal-box-step-customer-address-information #cartao-checkout-address-street-field-container input, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-street-field-container .pretty-select-container {
+    box-sizing: border-box;
+    width: 100%; }
+  #cartao-modal-box-step-customer-address-information #cartao-checkout-address-street-field-container .pretty-select-container span {
+    box-sizing: border-box;
+    width: 100%; }
+  #cartao-modal-box-step-customer-address-information #cartao-checkout-address-street-field-container.cartao-success input, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-street-field-container.cartao-success .pretty-select-container, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-street-field-container.cartao-error input, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-street-field-container.cartao-error .pretty-select-container {
+    width: 100%;
+    padding-right: 50px; }
+
+#cartao-modal-box-step-customer-address-information #cartao-checkout-address-number-field-container {
+  float: left;
+  width: 32%;
+  box-sizing: border-box; }
+  #cartao-modal-box-step-customer-address-information #cartao-checkout-address-number-field-container input, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-number-field-container .pretty-select-container {
+    box-sizing: border-box;
+    width: 100%; }
+  #cartao-modal-box-step-customer-address-information #cartao-checkout-address-number-field-container .pretty-select-container span {
+    box-sizing: border-box;
+    width: 100%; }
+  #cartao-modal-box-step-customer-address-information #cartao-checkout-address-number-field-container.cartao-success input, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-number-field-container.cartao-success .pretty-select-container, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-number-field-container.cartao-error input, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-number-field-container.cartao-error .pretty-select-container {
+    width: 100%;
+    padding-right: 50px; }
+
+#cartao-modal-box-step-customer-address-information #cartao-checkout-address-complementary-field-container {
+  margin-right: 2%;
+  float: left;
+  width: 56%;
+  box-sizing: border-box; }
+  #cartao-modal-box-step-customer-address-information #cartao-checkout-address-complementary-field-container input, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-complementary-field-container .pretty-select-container {
+    box-sizing: border-box;
+    width: 100%; }
+  #cartao-modal-box-step-customer-address-information #cartao-checkout-address-complementary-field-container .pretty-select-container span {
+    box-sizing: border-box;
+    width: 100%; }
+  #cartao-modal-box-step-customer-address-information #cartao-checkout-address-complementary-field-container.cartao-success input, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-complementary-field-container.cartao-success .pretty-select-container, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-complementary-field-container.cartao-error input, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-complementary-field-container.cartao-error .pretty-select-container {
+    width: 100%;
+    padding-right: 50px; }
+
+#cartao-modal-box-step-customer-address-information #cartao-checkout-address-neighborhood-field-container {
+  float: left;
+  width: 42%;
+  box-sizing: border-box; }
+  #cartao-modal-box-step-customer-address-information #cartao-checkout-address-neighborhood-field-container input, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-neighborhood-field-container .pretty-select-container {
+    box-sizing: border-box;
+    width: 100%; }
+  #cartao-modal-box-step-customer-address-information #cartao-checkout-address-neighborhood-field-container .pretty-select-container span {
+    box-sizing: border-box;
+    width: 100%; }
+  #cartao-modal-box-step-customer-address-information #cartao-checkout-address-neighborhood-field-container.cartao-success input, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-neighborhood-field-container.cartao-success .pretty-select-container, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-neighborhood-field-container.cartao-error input, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-neighborhood-field-container.cartao-error .pretty-select-container {
+    width: 100%;
+    padding-right: 50px; }
+
+#cartao-modal-box-step-customer-address-information #cartao-checkout-address-city-field-container {
+  margin-right: 2%;
+  float: left;
+  width: 66%;
+  box-sizing: border-box; }
+  #cartao-modal-box-step-customer-address-information #cartao-checkout-address-city-field-container input, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-city-field-container .pretty-select-container {
+    box-sizing: border-box;
+    width: 100%; }
+  #cartao-modal-box-step-customer-address-information #cartao-checkout-address-city-field-container .pretty-select-container span {
+    box-sizing: border-box;
+    width: 100%; }
+  #cartao-modal-box-step-customer-address-information #cartao-checkout-address-city-field-container.cartao-success input, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-city-field-container.cartao-success .pretty-select-container, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-city-field-container.cartao-error input, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-city-field-container.cartao-error .pretty-select-container {
+    width: 100%;
+    padding-right: 50px; }
+
+#cartao-modal-box-step-customer-address-information #cartao-checkout-address-state-field-container {
+  float: left;
+  width: 32%;
+  box-sizing: border-box; }
+  #cartao-modal-box-step-customer-address-information #cartao-checkout-address-state-field-container input, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-state-field-container .pretty-select-container {
+    box-sizing: border-box;
+    width: 100%; }
+  #cartao-modal-box-step-customer-address-information #cartao-checkout-address-state-field-container .pretty-select-container span {
+    box-sizing: border-box;
+    width: 100%; }
+  #cartao-modal-box-step-customer-address-information #cartao-checkout-address-state-field-container.cartao-success input, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-state-field-container.cartao-success .pretty-select-container, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-state-field-container.cartao-error input, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-state-field-container.cartao-error .pretty-select-container {
+    width: 100%;
+    padding-right: 50px; }
+
+#cartao-modal-box-step-choose-method button {
+  box-sizing: border-box;
+  width: 100%; }
+
+#cartao-modal-box-step-choose-method div {
+  box-sizing: border-box;
+  width: 100%; }
+
+#cartao-checkout-card-container {
+  display: none; }

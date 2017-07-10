@@ -1,0 +1,804 @@
+.clearfix {
+  clear: both; }
+
+.spinning {
+  -webkit-animation: spin 2s linear infinite;
+  -moz-animation: spin 2s linear infinite;
+  -ms-animation: spin 2s linear infinite;
+  -o-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite; }
+
+.brand-color {
+  color: #1a6ee1; }
+
+.brand-border-color {
+  border-color: #458ae9; }
+
+.brand-background-color {
+  background-color: #1a6ee1; }
+  .brand-background-color.darker-hover:hover {
+    background-color: #1558b3; }
+
+.no-mobile {
+  display: initial; }
+
+.mobile {
+  display: none; }
+
+.spinner {
+  height: 22px;
+  width: 22px;
+  position: relative;
+  -webkit-animation: rotation .6s infinite linear;
+  -moz-animation: rotation .6s infinite linear;
+  -o-animation: rotation .6s infinite linear;
+  animation: rotation .6s infinite linear;
+  border-left: 6px solid rgba(255, 255, 255, 0.15);
+  border-right: 6px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 6px solid rgba(255, 255, 255, 0.15);
+  border-top: 6px solid rgba(255, 255, 255, 0.8);
+  border-radius: 100%; }
+
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(359deg); } }
+
+@-moz-keyframes rotation {
+  from {
+    -moz-transform: rotate(0deg); }
+  to {
+    -moz-transform: rotate(359deg); } }
+
+@-o-keyframes rotation {
+  from {
+    -o-transform: rotate(0deg); }
+  to {
+    -o-transform: rotate(359deg); } }
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(359deg); } }
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg); } }
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg); } }
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg); } }
+
+@-o-keyframes spin {
+  100% {
+    -o-transform: rotate(360deg); } }
+
+@-ms-keyframes spin {
+  100% {
+    -ms-transform: rotate(360deg); } }
+
+::-webkit-input-placeholder {
+  color: #aaa;
+  opacity: 1; }
+
+::-moz-placeholder {
+  color: #aaa;
+  opacity: 1; }
+
+/* firefox 19+ */
+:-ms-input-placeholder {
+  color: #aaa;
+  opacity: 1; }
+
+/* ie */
+input:-moz-placeholder {
+  color: #aaa;
+  opactiy: 1; }
+
+.error-message {
+  text-align: center;
+  color: #fff;
+  margin: 20px 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.25em; }
+  .error-message span {
+    color: #f8f794; }
+
+#cartao-checkout-ui {
+  opacity: 0;
+  font-family: 'Titillium Web', sans-serif;
+  text-align: center;
+  z-index: 999998;
+  overflow: auto;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  top: 0;
+  left: 0;
+  -webkit-overflow-scrolling: touch;
+  transform: translateZ(0); }
+  #cartao-checkout-ui * {
+    text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px; }
+
+#cartao-checkout-header {
+  position: relative;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%; }
+  #cartao-checkout-header a {
+    color: #707070;
+    display: block;
+    float: left;
+    padding: 25px; }
+  #cartao-checkout-header #cartao-checkout-back-link {
+    font-size: 12px; }
+    #cartao-checkout-header #cartao-checkout-back-link span {
+      display: inline-block; }
+    #cartao-checkout-header #cartao-checkout-back-link .icon-pg-checkout-back {
+      margin-right: 7px;
+      font-size: 25px;
+      vertical-align: middle; }
+  #cartao-checkout-header .icon-pg-checkout-close {
+    font-size: 25px; }
+  #cartao-checkout-header #cartao-checkout-close-link {
+    float: right; }
+
+#cartao-checkout-footer {
+  font-size: 13px;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1; }
+  #cartao-checkout-footer p {
+    color: #707070;
+    float: left; }
+  #cartao-checkout-footer #cartao-checkout-cartao-brand {
+    float: right; }
+    #cartao-checkout-footer #cartao-checkout-cartao-brand .icon-pg-checkout-cartao-logo {
+      display: inline-block;
+      margin-left: 10px;
+      font-size: 25px;
+      vertical-align: middle; }
+  #cartao-checkout-footer a,
+  #cartao-checkout-footer a:link,
+  #cartao-checkout-footer a:hover,
+  #cartao-checkout-footer a:active,
+  #cartao-checkout-footer a:visited {
+    color: #707070; }
+
+@media screen and (min-width: 1025px) {
+  #cartao-checkout-footer,
+  #cartao-checkout-header {
+    position: fixed; }
+  #footer-container {
+    padding: 0 25px 25px; }
+  #cartao-modal-box {
+     } }
+
+@media screen and (max-width: 1024px) {
+  #cartao-modal-box {
+    margin: 20px auto 0; }
+  #cartao-checkout-footer {
+    width: 100%;
+    max-width: 390px;
+    margin: 0 auto 350px; }
+    #cartao-checkout-footer #cartao-checkout-secure-connection,
+    #cartao-checkout-footer #cartao-checkout-cartao-brand {
+      float: none;
+      text-align: center;
+      font-size: 11px;
+      margin-bottom: 5px; }
+    #cartao-checkout-footer #cartao-checkout-cartao-brand .icon-pg-checkout-cartao-logo {
+      font-size: 24px; }
+    #cartao-checkout-footer #cartao-checkout-cartao-brand span.no-mobile {
+      display: none; }
+  #cartao-checkout-header {
+    height: 45px; } }
+
+#cartao-modal-loading {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute; }
+  #cartao-modal-loading .spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -11px;
+    margin-left: -11px; }
+
+#cartao-checkout-step-title {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  color: #fff;
+  text-align: center;
+  margin: 30px 0 20px; }
+
+#cartao-checkout-amount-information {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  color: #fff;
+  margin: 0 0 25px;
+  font-size: 16px; }
+
+.cartao-checkout-step-indicator {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: bold;
+  height: 39px;
+  margin: -5px auto 20px;
+  overflow: hidden;
+  display: none; }
+  .cartao-checkout-step-indicator.show {
+    display: inline-block; }
+  .cartao-checkout-step-indicator.mobile {
+    display: none; }
+  .cartao-checkout-step-indicator li {
+    cursor: pointer;
+    height: 36px;
+    text-decoration: none;
+    color: #3b3b3b;
+    font-size: 30px;
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 2px;
+    line-height: 36px; }
+    .cartao-checkout-step-indicator li.validated {
+      color: #ccc; }
+    .cartao-checkout-step-indicator li.active {
+      font-size: 36px;
+      color: #fff; }
+
+*:focus {
+  outline: none;
+  -moz-appearance: none; }
+
+#cartao-modal-box {
+  position: relative;
+  width: 100%;
+  z-index: 2; }
+  #cartao-modal-box input,
+  #cartao-modal-box .pretty-select-container,
+  #cartao-modal-box button {
+    text-overflow: ellipsis;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 15px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -o-border-radius: 6px;
+    -ms-border-radius: 6px;
+    border-radius: 6px;
+    width: 356px;
+    border: 0; }
+  #cartao-modal-box .pretty-select-container {
+    position: relative;
+    height: 55px;
+    padding: 0 15px; }
+    #cartao-modal-box .pretty-select-container select {
+      -webkit-appearance: button;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      cursor: pointer;
+      filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+      -webkit-opacity: 0;
+      -moz-opacity: 0;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha" Opacity=0;
+      -o-opacity: 0;
+      opacity: 0; }
+    #cartao-modal-box .pretty-select-container span {
+      display: block;
+      display: inline-block;
+      padding: 15px 0;
+      line-height: normal;
+      margin: 2px 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+      #cartao-modal-box .pretty-select-container span.placeholder {
+        color: #aaa; }
+    #cartao-modal-box .pretty-select-container img {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      margin-top: -3px; }
+  #cartao-modal-box .cartao-checkout-input-container {
+    margin: 0 0 6px 0;
+    display: block;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -o-border-radius: 6px;
+    -ms-border-radius: 6px;
+    border-radius: 6px;
+    width: 386px;
+    border: 2px solid #fff;
+    background-color: #fff;
+    cursor: text;
+    overflow: hidden;
+    position: relative;
+    height: 55px;
+    -webkit-transition: box-shadow 0.25s ease-out, border-color 0.25s ease-out;
+    -moz-transition: box-shadow 0.25s ease-out, border-color 0.25s ease-out;
+    -o-transition: box-shadow 0.25s ease-out, border-color 0.25s ease-out;
+    -ms-transition: box-shadow 0.25s ease-out, border-color 0.25s ease-out;
+    transition: box-shadow 0.25s ease-out, border-color 0.25s ease-out; }
+    #cartao-modal-box .cartao-checkout-input-container .brand-icon {
+      display: none; }
+    #cartao-modal-box .cartao-checkout-input-container .cartao-checkout-success-mark, #cartao-modal-box .cartao-checkout-input-container .cartao-checkout-error-mark, #cartao-modal-box .cartao-checkout-input-container .cartao-checkout-loading {
+      position: absolute;
+      right: -30px;
+      top: 21px;
+      width: 30px;
+      text-align: left;
+      color: #00AB65;
+      display: none;
+      font-size: 12px;
+      -webkit-transition: right 0.25s ease-out;
+      -moz-transition: right 0.25s ease-out;
+      -o-transition: right 0.25s ease-out;
+      -ms-transition: right 0.25s ease-out;
+      transition: right 0.25s ease-out; }
+    #cartao-modal-box .cartao-checkout-input-container .cartao-checkout-error-mark {
+      color: #ff571a; }
+    #cartao-modal-box .cartao-checkout-input-container.cartao-success input, #cartao-modal-box .cartao-checkout-input-container.cartao-error input, #cartao-modal-box .cartao-checkout-input-container.cartao-loading input {
+      width: 326px; }
+    #cartao-modal-box .cartao-checkout-input-container.cartao-success .pretty-select-container img, #cartao-modal-box .cartao-checkout-input-container.cartao-error .pretty-select-container img, #cartao-modal-box .cartao-checkout-input-container.cartao-loading .pretty-select-container img {
+      display: none; }
+    #cartao-modal-box .cartao-checkout-input-container.cartao-success {
+      border-color: #00AB65; }
+      #cartao-modal-box .cartao-checkout-input-container.cartao-success .cartao-checkout-success-mark {
+        right: 0;
+        display: inline-block; }
+      #cartao-modal-box .cartao-checkout-input-container.cartao-success input, #cartao-modal-box .cartao-checkout-input-container.cartao-success span {
+        color: #00AB65; }
+    #cartao-modal-box .cartao-checkout-input-container.cartao-error {
+      border-color: #ff571a; }
+      #cartao-modal-box .cartao-checkout-input-container.cartao-error .cartao-checkout-error-mark {
+        right: 0;
+        display: inline-block; }
+      #cartao-modal-box .cartao-checkout-input-container.cartao-error input {
+        color: #ff571a; }
+    #cartao-modal-box .cartao-checkout-input-container.cartao-loading .cartao-checkout-loading {
+      right: 0;
+      display: inline-block; }
+    #cartao-modal-box .cartao-checkout-input-container.readonly, #cartao-modal-box .cartao-checkout-input-container.readonly * {
+      cursor: not-allowed; }
+    #cartao-modal-box .cartao-checkout-input-container.focus {
+      -moz-box-shadow: 0 0 4px 1px #1687c8;
+      -webkit-box-shadow: 0 0 4px 1px #1687c8;
+      -o-box-shadow: 0 0 4px 1px #1687c8;
+      -ms-box-shadow: 0 0 4px 1px #1687c8;
+      box-shadow: 0 0 4px 1px #1687c8;
+      border-color: #1687c8; }
+  #cartao-modal-box button {
+    text-align: left;
+    color: #fff;
+    width: 390px;
+    height: 80px;
+    cursor: pointer;
+    vertical-align: middle; }
+    #cartao-modal-box button .icon-pg-checkout-continue {
+      float: right;
+      font-size: 22px; }
+    #cartao-modal-box button:focus {
+      -moz-box-shadow: none;
+      -webkit-box-shadow: none;
+      -o-box-shadow: none;
+      -ms-box-shadow: none;
+      box-shadow: none; }
+
+.cartao-checkout-step {
+  left: 0;
+  position: relative;
+  width: 390px;
+  text-align: left;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha" Opacity=100;
+  -o-opacity: 1;
+  opacity: 1;
+  margin-bottom: 50px;
+  z-index: 1000; }
+  .cartao-checkout-step.hidden {
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha" Opacity=0;
+    -o-opacity: 0;
+    opacity: 0; }
+  .cartao-checkout-step.next, .cartao-checkout-step.previous {
+    z-index: 1; }
+  .cartao-checkout-step.next {
+    left: 100px; }
+  .cartao-checkout-step.previous {
+    left: -100px; }
+
+#cartao-modal-box-step-choose-method button {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -o-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+  font-size: 20px;
+  background: none;
+  height: auto;
+  border: 0;
+  width: 370px;
+  height: 100px;
+  -webkit-transition: font-size 0.35s ease-out;
+  -moz-transition: font-size 0.35s ease-out;
+  -o-transition: font-size 0.35s ease-out;
+  -ms-transition: font-size 0.35s ease-out;
+  transition: font-size 0.35s ease-out; }
+
+#cartao-modal-box-step-choose-method .choose-method-button-container {
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  height: 100px; }
+  #cartao-modal-box-step-choose-method .choose-method-button-container.spinner {
+    overflow: visible !important; }
+  #cartao-modal-box-step-choose-method .choose-method-button-container span#boleto-discount {
+    font-size: 12px; }
+  #cartao-modal-box-step-choose-method .choose-method-button-container .payment-method-helper-text {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    font-style: italic;
+    transform: translateY(0) translateZ(0);
+    -webkit-transition: transform 0.35s ease-out;
+    -moz-transition: transform 0.35s ease-out;
+    -o-transition: transform 0.35s ease-out;
+    -ms-transition: transform 0.35s ease-out;
+    transition: transform 0.35s ease-out; }
+
+#cartao-modal-box-step-choose-method .arrow {
+  background-image: url("../images/payment-method-button.png");
+  background-repeat: no-repeat;
+  background-position: -210px -30px;
+  -webkit-transition: background 0.35s ease-out;
+  -moz-transition: background 0.35s ease-out;
+  -o-transition: background 0.35s ease-out;
+  -ms-transition: background 0.35s ease-out;
+  transition: background 0.35s ease-out; }
+  #cartao-modal-box-step-choose-method .arrow span.button-indicator {
+    color: #fff;
+    position: absolute;
+    top: 37px;
+    right: 30px;
+    font-size: 25px;
+    -webkit-transition: right 0.35s ease-out;
+    -moz-transition: right 0.35s ease-out;
+    -o-transition: right 0.35s ease-out;
+    -ms-transition: right 0.35s ease-out;
+    transition: right 0.35s ease-out; }
+  #cartao-modal-box-step-choose-method .arrow.mf-fake-hover, #cartao-modal-box-step-choose-method .arrow:hover {
+    background-position: 210px -30px; }
+    #cartao-modal-box-step-choose-method .arrow.mf-fake-hover span.button-indicator, #cartao-modal-box-step-choose-method .arrow:hover span.button-indicator {
+      right: -30px; }
+    #cartao-modal-box-step-choose-method .arrow.mf-fake-hover button, #cartao-modal-box-step-choose-method .arrow:hover button {
+      font-size: 26px; }
+    #cartao-modal-box-step-choose-method .arrow.mf-fake-hover .payment-method-helper-text, #cartao-modal-box-step-choose-method .arrow:hover .payment-method-helper-text {
+      transform: translateY(2px) translateZ(0); }
+
+#cartao-modal-box-step-choose-method #cartao-checkout-card-button {
+  -webkit-border-top-left-radius: 6px;
+  -moz-border-top-left-radius: 6px;
+  -ms-border-top-left-radius: 6px;
+  -o-border-top-left-radius: 6px;
+  border-top-left-radius: 6px;
+  -webkit-border-top-right-radius: 6px;
+  -moz-border-top-right-radius: 6px;
+  -ms-border-top-right-radius: 6px;
+  -o-border-top-right-radius: 6px;
+  border-top-right-radius: 6px;
+  padding: 0 10px; }
+  #cartao-modal-box-step-choose-method #cartao-checkout-card-button button {
+    border-bottom-color: #458ae9;
+    border-bottom-style: solid;
+    border-bottom-width: 1px; }
+
+#cartao-modal-box-step-choose-method #cartao-checkout-boleto-button {
+  -webkit-border-bottom-right-radius: 6px;
+  -moz-border-bottom-right-radius: 6px;
+  -ms-border-bottom-right-radius: 6px;
+  -o-border-bottom-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  -moz-border-bottom-left-radius: 6px;
+  -ms-border-bottom-left-radius: 6px;
+  -o-border-bottom-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  padding: 0 10px; }
+
+#cartao-modal-box-step-choose-method.mf-fake-hover #cartao-checkout-card-button button, #cartao-modal-box-step-choose-method:hover #cartao-checkout-card-button button {
+  border-bottom: none; }
+
+#cartao-modal-box-step-boleto-installment-information .boleto-installment-button {
+  margin-top: 10px; }
+
+#cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-expiration-container {
+  margin-right: 6px;
+  float: left;
+  width: 221px; }
+  #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-expiration-container input, #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-expiration-container .pretty-select-container {
+    width: 191px; }
+  #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-expiration-container.cartao-success input, #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-expiration-container.cartao-success .pretty-select-container, #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-expiration-container.cartao-error input, #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-expiration-container.cartao-error .pretty-select-container {
+    padding-right: 50px;
+    width: 171px; }
+
+#cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-cvv-container {
+  float: left;
+  width: 155px; }
+  #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-cvv-container input, #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-cvv-container .pretty-select-container {
+    width: 125px; }
+  #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-cvv-container.cartao-success input, #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-cvv-container.cartao-success .pretty-select-container, #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-cvv-container.cartao-error input, #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-cvv-container.cartao-error .pretty-select-container {
+    padding-right: 50px;
+    width: 105px; }
+
+#cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-expiration-container.has-installments {
+  margin-right: 6px;
+  float: left;
+  width: 120px; }
+  #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-expiration-container.has-installments input, #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-expiration-container.has-installments .pretty-select-container {
+    width: 90px; }
+  #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-expiration-container.has-installments.cartao-success input, #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-expiration-container.has-installments.cartao-success .pretty-select-container, #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-expiration-container.has-installments.cartao-error input, #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-expiration-container.has-installments.cartao-error .pretty-select-container {
+    padding-right: 50px;
+    width: 70px; }
+
+#cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-cvv-container.has-installments {
+  margin-right: 6px;
+  float: left;
+  width: 100px; }
+  #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-cvv-container.has-installments input, #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-cvv-container.has-installments .pretty-select-container {
+    width: 70px; }
+  #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-cvv-container.has-installments.cartao-success input, #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-cvv-container.has-installments.cartao-success .pretty-select-container, #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-cvv-container.has-installments.cartao-error input, #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-cvv-container.has-installments.cartao-error .pretty-select-container {
+    padding-right: 50px;
+    width: 50px; }
+
+#cartao-modal-box-step-credit-card-information #cartao-checkout-installments-container {
+  display: none;
+  float: left;
+  width: 146px; }
+  #cartao-modal-box-step-credit-card-information #cartao-checkout-installments-container input, #cartao-modal-box-step-credit-card-information #cartao-checkout-installments-container .pretty-select-container {
+    /*width: 116px;*/
+  }
+  #cartao-modal-box-step-credit-card-information #cartao-checkout-installments-container.cartao-success input, #cartao-modal-box-step-credit-card-information #cartao-checkout-installments-container.cartao-success .pretty-select-container, #cartao-modal-box-step-credit-card-information #cartao-checkout-installments-container.cartao-error input, #cartao-modal-box-step-credit-card-information #cartao-checkout-installments-container.cartao-error .pretty-select-container {
+    padding-right: 50px;
+    /*width: 96px; */
+  }
+  #cartao-modal-box-step-credit-card-information #cartao-checkout-installments-container.has-installments {
+    display: block; }
+
+#cartao-modal-box-step-credit-card-information.next #cartao-checkout-card-container .field, #cartao-modal-box-step-credit-card-information.previous #cartao-checkout-card-container .field {
+  display: none; }
+
+#cartao-modal-box-step-buyer-information #cartao-checkout-ddd-field-container {
+  margin-right: 6px;
+  float: left;
+  width: 115px; }
+  #cartao-modal-box-step-buyer-information #cartao-checkout-ddd-field-container input, #cartao-modal-box-step-buyer-information #cartao-checkout-ddd-field-container .pretty-select-container {
+    width: 85px; }
+  #cartao-modal-box-step-buyer-information #cartao-checkout-ddd-field-container.cartao-success input, #cartao-modal-box-step-buyer-information #cartao-checkout-ddd-field-container.cartao-success .pretty-select-container, #cartao-modal-box-step-buyer-information #cartao-checkout-ddd-field-container.cartao-error input, #cartao-modal-box-step-buyer-information #cartao-checkout-ddd-field-container.cartao-error .pretty-select-container {
+    padding-right: 50px;
+    width: 65px; }
+
+#cartao-modal-box-step-buyer-information #cartao-checkout-phone-number-field-container {
+  float: left;
+  width: 261px; }
+  #cartao-modal-box-step-buyer-information #cartao-checkout-phone-number-field-container input, #cartao-modal-box-step-buyer-information #cartao-checkout-phone-number-field-container .pretty-select-container {
+    width: 231px; }
+  #cartao-modal-box-step-buyer-information #cartao-checkout-phone-number-field-container.cartao-success input, #cartao-modal-box-step-buyer-information #cartao-checkout-phone-number-field-container.cartao-success .pretty-select-container, #cartao-modal-box-step-buyer-information #cartao-checkout-phone-number-field-container.cartao-error input, #cartao-modal-box-step-buyer-information #cartao-checkout-phone-number-field-container.cartao-error .pretty-select-container {
+    padding-right: 50px;
+    width: 211px; }
+
+#cartao-modal-box-step-customer-address-information #cartao-checkout-address-street-field-container {
+  margin-right: 6px;
+  float: left;
+  width: 255px; }
+  #cartao-modal-box-step-customer-address-information #cartao-checkout-address-street-field-container input, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-street-field-container .pretty-select-container {
+    width: 225px; }
+  #cartao-modal-box-step-customer-address-information #cartao-checkout-address-street-field-container.cartao-success input, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-street-field-container.cartao-success .pretty-select-container, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-street-field-container.cartao-error input, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-street-field-container.cartao-error .pretty-select-container {
+    padding-right: 50px;
+    width: 205px; }
+
+#cartao-modal-box-step-customer-address-information #cartao-checkout-address-number-field-container {
+  float: left;
+  width: 121px; }
+  #cartao-modal-box-step-customer-address-information #cartao-checkout-address-number-field-container input, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-number-field-container .pretty-select-container {
+    width: 91px; }
+  #cartao-modal-box-step-customer-address-information #cartao-checkout-address-number-field-container.cartao-success input, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-number-field-container.cartao-success .pretty-select-container, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-number-field-container.cartao-error input, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-number-field-container.cartao-error .pretty-select-container {
+    padding-right: 50px;
+    width: 71px; }
+
+#cartao-modal-box-step-customer-address-information #cartao-checkout-address-complementary-field-container {
+  margin-right: 6px;
+  float: left;
+  width: 216px; }
+  #cartao-modal-box-step-customer-address-information #cartao-checkout-address-complementary-field-container input, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-complementary-field-container .pretty-select-container {
+    width: 186px; }
+  #cartao-modal-box-step-customer-address-information #cartao-checkout-address-complementary-field-container.cartao-success input, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-complementary-field-container.cartao-success .pretty-select-container, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-complementary-field-container.cartao-error input, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-complementary-field-container.cartao-error .pretty-select-container {
+    padding-right: 50px;
+    width: 166px; }
+
+#cartao-modal-box-step-customer-address-information #cartao-checkout-address-neighborhood-field-container {
+  float: left;
+  width: 160px; }
+  #cartao-modal-box-step-customer-address-information #cartao-checkout-address-neighborhood-field-container input, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-neighborhood-field-container .pretty-select-container {
+    width: 130px; }
+  #cartao-modal-box-step-customer-address-information #cartao-checkout-address-neighborhood-field-container.cartao-success input, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-neighborhood-field-container.cartao-success .pretty-select-container, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-neighborhood-field-container.cartao-error input, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-neighborhood-field-container.cartao-error .pretty-select-container {
+    padding-right: 50px;
+    width: 110px; }
+
+#cartao-modal-box-step-customer-address-information #cartao-checkout-address-city-field-container {
+  margin-right: 6px;
+  float: left;
+  width: 286px; }
+  #cartao-modal-box-step-customer-address-information #cartao-checkout-address-city-field-container input, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-city-field-container .pretty-select-container {
+    width: 256px; }
+  #cartao-modal-box-step-customer-address-information #cartao-checkout-address-city-field-container.cartao-success input, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-city-field-container.cartao-success .pretty-select-container, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-city-field-container.cartao-error input, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-city-field-container.cartao-error .pretty-select-container {
+    padding-right: 50px;
+    width: 236px; }
+
+#cartao-modal-box-step-customer-address-information #cartao-checkout-address-state-field-container {
+  float: left;
+  width: 90px; }
+  #cartao-modal-box-step-customer-address-information #cartao-checkout-address-state-field-container input, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-state-field-container .pretty-select-container {
+    width: 60px; }
+  #cartao-modal-box-step-customer-address-information #cartao-checkout-address-state-field-container.cartao-success input, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-state-field-container.cartao-success .pretty-select-container, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-state-field-container.cartao-error input, #cartao-modal-box-step-customer-address-information #cartao-checkout-address-state-field-container.cartao-error .pretty-select-container {
+    padding-right: 50px;
+    width: 40px; }
+
+#cartao-checkout-error-container {
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha" Opacity=100;
+  -o-opacity: 1;
+  opacity: 1;
+  color: #fff; }
+  #cartao-checkout-error-container #cartao-checkout-error-header {
+    background-color: #dc4a4a;
+    padding: 20px 25px;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 800;
+    -webkit-border-top-left-radius: 6px;
+    -moz-border-top-left-radius: 6px;
+    -ms-border-top-left-radius: 6px;
+    -o-border-top-left-radius: 6px;
+    border-top-left-radius: 6px;
+    -webkit-border-top-right-radius: 6px;
+    -moz-border-top-right-radius: 6px;
+    -ms-border-top-right-radius: 6px;
+    -o-border-top-right-radius: 6px;
+    border-top-right-radius: 6px; }
+  #cartao-checkout-error-container #cartao-checkout-error-body {
+    background-color: #fff;
+    color: #8d8d8d;
+    padding: 25px;
+    -webkit-border-bottom-right-radius: 6px;
+    -moz-border-bottom-right-radius: 6px;
+    -ms-border-bottom-right-radius: 6px;
+    -o-border-bottom-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    -webkit-border-bottom-left-radius: 6px;
+    -moz-border-bottom-left-radius: 6px;
+    -ms-border-bottom-left-radius: 6px;
+    -o-border-bottom-left-radius: 6px;
+    border-bottom-left-radius: 6px; }
+  #cartao-checkout-error-container #cartao-checkout-error-back-button {
+    background-color: #3e3f41;
+    color: #fff;
+    display: block;
+    margin-top: 10px;
+    padding: 25px;
+    font-size: 18px;
+    font-weight: 800;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -o-border-radius: 6px;
+    -ms-border-radius: 6px;
+    border-radius: 6px; }
+
+.pretty-select-wrap {
+  position: relative;
+  cursor: pointer; }
+  .pretty-select-wrap * {
+    cursor: pointer; }
+  .pretty-select-wrap .pretty-select-select-container {
+    height: 98px;
+    position: absolute;
+    top: 0;
+    left: 102%;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transition: all 0.3s cubic-bezier(0.34, 1.61, 0.7, 1);
+    -moz-transition: all 0.3s cubic-bezier(0.34, 1.61, 0.7, 1);
+    -o-transition: all 0.3s cubic-bezier(0.34, 1.61, 0.7, 1);
+    -ms-transition: all 0.3s cubic-bezier(0.34, 1.61, 0.7, 1);
+    transition: all 0.3s cubic-bezier(0.34, 1.61, 0.7, 1); }
+    .pretty-select-wrap .pretty-select-select-container.hidden {
+      -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+      transform: scale(0);
+      -webkit-transition: all 0.3s cubic-bezier(0.2, 1, 0.7, 1);
+      -moz-transition: all 0.3s cubic-bezier(0.2, 1, 0.7, 1);
+      -o-transition: all 0.3s cubic-bezier(0.2, 1, 0.7, 1);
+      -ms-transition: all 0.3s cubic-bezier(0.2, 1, 0.7, 1);
+      transition: all 0.3s cubic-bezier(0.2, 1, 0.7, 1); }
+    .pretty-select-wrap .pretty-select-select-container .select-arrow {
+      border: solid transparent;
+      width: 0;
+      height: 0;
+      border-right-color: #fff;
+      border-width: 5px;
+      position: absolute;
+      left: -5px;
+      top: 25px; }
+    .pretty-select-wrap .pretty-select-select-container .select-options {
+      padding: 5px;
+      min-width: 50px;
+      overflow: scroll;
+      background-color: #fff;
+      position: absolute;
+      bottom: 0;
+      left: 5px;
+      -webkit-border-radius: 6px;
+      -moz-border-radius: 6px;
+      -o-border-radius: 6px;
+      -ms-border-radius: 6px;
+      border-radius: 6px; }
+      .pretty-select-wrap .pretty-select-select-container .select-options .select-option {
+        text-align: center;
+        padding: 8px;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        -o-border-radius: 6px;
+        -ms-border-radius: 6px;
+        border-radius: 6px;
+        font-size: 14px;
+        white-space: nowrap; }
+        .pretty-select-wrap .pretty-select-select-container .select-options .select-option:hover {
+          background-color: gray;
+          color: #fff; }
+        .pretty-select-wrap .pretty-select-select-container .select-options .select-option.active {
+          background-color: #1a6ee1;
+          color: #fff; }

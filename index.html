@@ -1,0 +1,669 @@
+<!-- PERSONALIZACAO CARTAO-->
+<link rel="stylesheet" href="css_cartao/cartao-ui.css?version=5" />
+<link rel="stylesheet" href="css_cartao/card.css?version=5" />
+<link rel="stylesheet" href="css_cartao/mobile.css" media="only screen and (max-width: 600px)" />
+
+<script src="jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="jquery.creditCardValidator.js"></script>
+<script type="text/javascript" src="jquery.modal.js"></script>
+
+<script type="text/javascript" src="-js_cartao/mascara.js"></script>
+
+
+
+
+
+
+<script src="js_cartao/card.js"></script>
+<script src="js_cartao/modal2.js"></script>
+<script>
+var cartoes = [];
+
+<?php if($ativa_electron=='1'){?>
+cartoes.push('electron');
+<?php }?>
+<?php if($ativa_maestro=='1'){?>
+cartoes.push('maestro');
+<?php }?>
+<?php if($ativa_visa=='1'){?>
+cartoes.push('visa');
+<?php }?>
+<?php if($ativa_mastercard=='1'){?>
+cartoes.push('mastercard');
+<?php }?>
+<?php if($ativa_elo=='1'){?>
+cartoes.push('elo');
+<?php }?>
+<?php if($ativa_diners=='1'){?>
+cartoes.push('diners');
+<?php }?>
+<?php if($ativa_amex=='1'){?>
+cartoes.push('amex');
+<?php }?>
+<?php if($ativa_jcb=='1'){?>
+cartoes.push('jbc');
+<?php }?>
+<?php if($ativa_aura=='1'){?>
+cartoes.push('aura');
+<?php }?>
+<?php if($ativa_discover=='1'){?>
+cartoes.push('discover');
+<?php }?>
+
+
+$(".cpf").mask("999.999.999-99",{completed:function(){
+  if(!valida_cpf(this.val())){
+    $(this).parents(".cartao-checkout-input-container").removeClass("focus").removeClass("cartao-success").addClass("cartao-error")
+  }else{
+    $(this).parents(".cartao-checkout-input-container").removeClass("focus").removeClass("cartao-error").addClass("cartao-success")
+  }
+}});
+/*MASCARA*/
+$(".telefone").mask("(99)999999999");
+$("#cartao-modal-box-credit-card-expiration").mask("99/99");
+
+
+
+    console.log('car',cartoes);
+
+                    $('#numero_cartao').focus(function(e) {
+                      console.log(e);
+                      $(this).parents(".cartao-checkout-input-container").removeClass("cartao-success").addClass("focus");
+                    });
+                    $('#numero_cartao').focusout(function(e) {
+                      var num = $('#numero_cartao').val();
+                      if(jcv_luhnCheck(num) == false){
+                        $(this).parents(".cartao-checkout-input-container").removeClass("focus").removeClass("cartao-success").addClass("cartao-error")
+                      }else{
+                        $(this).parents(".cartao-checkout-input-container").removeClass("focus").removeClass("cartao-error").addClass("cartao-success")
+                      }
+                    });
+
+
+                    $('#nometitular').focus(function(e) {
+                      console.log(e);
+                      $(this).parents(".cartao-checkout-input-container").removeClass("cartao-success").addClass("focus");
+                    });
+                    $('#nometitular').focusout(function(e) {
+                      var num = $('#nometitular').val();
+                      if(num == ''){
+                        $(this).parents(".cartao-checkout-input-container").removeClass("focus").removeClass("cartao-success").addClass("cartao-error")
+                      }else{
+                        $(this).parents(".cartao-checkout-input-container").removeClass("focus").removeClass("cartao-error").addClass("cartao-success")
+                      }
+                    });
+
+
+                    $('#cartao-modal-box-credit-card-expiration').focus(function(e) {
+                      $(this).parents(".cartao-checkout-input-container").removeClass("cartao-success").addClass("focus");
+                    });
+                    $('#cartao-modal-box-credit-card-expiration').focusout(function(e) {
+
+                      var validade = $('#cartao-modal-box-credit-card-expiration').val();
+                      var mes='', ano='';
+                      if(validade){
+                        validade = validade.split('/');
+                        mes = validade[0];
+                        ano = validade[1];
+                      }
+
+                      if(mes == '__' || ano == '__' || mes == '' || ano == '' ||  !ano || !mes){
+                        $(this).parents(".cartao-checkout-input-container").removeClass("focus").removeClass("cartao-success").addClass("cartao-error")
+                      }else{
+                        $(this).parents(".cartao-checkout-input-container").removeClass("focus").removeClass("cartao-error").addClass("cartao-success")
+                      }
+                    });
+
+
+                    $('#cod_cartao').focus(function(e) {
+                      $(this).parents(".cartao-checkout-input-container").removeClass("cartao-success").addClass("focus");
+                    });
+                    $('#cod_cartao').focusout(function(e) {
+                      var cod = $('#cod_cartao').val();
+                      if(cod == ''){
+                        $(this).parents(".cartao-checkout-input-container").removeClass("focus").removeClass("cartao-success").addClass("cartao-error")
+                      }else{
+                        $(this).parents(".cartao-checkout-input-container").removeClass("focus").removeClass("cartao-error").addClass("cartao-success")
+                      }
+                      var bandeira = $("#cc_oculto").val();
+                      if(bandeira=='amex' && cod.length<4){
+                        $(this).parents(".cartao-checkout-input-container").removeClass("focus").removeClass("cartao-success").addClass("cartao-error")
+                      }else if(cod.length < 3){
+                        $(this).parents(".cartao-checkout-input-container").removeClass("focus").removeClass("cartao-success").addClass("cartao-error")
+                      }
+
+                    });
+
+
+
+
+                    $('#telefone_parcelado').focus(function(e) {
+                      console.log(e);
+                      $(this).parents(".cartao-checkout-input-container").removeClass("cartao-success").addClass("focus");
+                    });
+                    $('#telefone_parcelado').focusout(function(e) {
+                      var num = $('#telefone_parcelado').val();
+                      if(num == '(__)_________'){
+                        $(this).parents(".cartao-checkout-input-container").removeClass("focus").removeClass("cartao-success").addClass("cartao-error")
+                      }else{
+                        $(this).parents(".cartao-checkout-input-container").removeClass("focus").removeClass("cartao-error").addClass("cartao-success")
+                      }
+                    });
+
+                    $('#cpf_parcelado').focus(function(e) {
+                      $(this).parents(".cartao-checkout-input-container").removeClass("cartao-success").addClass("focus");
+                    });
+                    $('#cpf_parcelado').focusout(function(e) {
+                      var num = $('#cpf_parcelado').val();
+                      console.log('num',num);
+                      if(num == '___________'){
+                        $(this).parents(".cartao-checkout-input-container").removeClass("focus").removeClass("cartao-success").addClass("cartao-error")
+                      }else if(!valida_cpf(num)){
+                        $(this).parents(".cartao-checkout-input-container").removeClass("focus").removeClass("cartao-success").addClass("cartao-error")
+                      }else{
+                        $(this).parents(".cartao-checkout-input-container").removeClass("focus").removeClass("cartao-error").addClass("cartao-success")
+                      }
+                    });
+
+
+
+
+
+
+
+
+
+                    $(".ccs_tipo").css({ opacity: 0.1 });
+
+                    $('#cartao-modal-box-step-credit-card-information').hide();
+
+
+
+
+                    var tipoCartao = function(tipo){
+                      console.log('tipo',tipo);
+                      $(".ccs_tipo").css({ opacity: 0.1 });
+                      $("#"+ tipo ).css({ opacity: 1 });
+
+                      $(".escolha_cartao").css({ color: '#666' });
+                      $("#caixa_"+ tipo ).css({ color: '#fff' });
+
+
+
+                      $('#tipo_cartao').val(tipo);
+                      $('#cartao-modal-box-step-credit-card-information').show();
+                      //limpa os campos
+                      $(".cpf").val('');
+                      $(".telefone").val('');
+                      $("#numero_cartao").val('');
+                      $("#cod_cartao").val('');
+                      $("#ano_cartao").val('');
+                      $("#mes_cartao").val('');
+                      $("#nometitular").val('');
+                      $("#cartao-modal-box-credit-card-expiration").val('');
+
+
+                    }
+
+                    var exec_calc_parcela = function(cartao){
+                        console.log('cartao',cartao);
+
+
+                      var tipo =$('#tipo_cartao').val();
+                      if(tipo === "credito"){
+                        Parcelado(cartao);
+                      }else if(tipo === "debito"){
+                        cartao = cartao == 'visa' ? 'electron' : (cartao == 'mastercard' ? 'maestro' : '');
+                        cartao ? Debito(cartao) : console.log('NOT CARTAO SELECT DEBITO');
+                      }else{
+                        alert('selecione tipo de pagamento')
+                      }
+                      console.log('baneira',cartao);
+
+                    }
+
+
+                    var n = new Cartao.CardForm("#cartao-checkout-card-container", {
+                      number: {
+                        input: "#numero_cartao"
+                      },
+                      cvv: {
+                        input: "#cod_cartao"
+                      },
+                      name: {
+                        input: "#nometitular"
+                      },
+                      expiration: {
+                        input: "#cartao-modal-box-credit-card-expiration"
+                      }
+                    })
+                    n.fill()
+                    </script>
+                    <style>
+                    #cartao-checkout-ui {
+                      opacity: 1;
+                    }
+                    .cartao-checkout-step{
+                      min-width: 100%;
+                    }
+
+                    .dadoscomprador  .cartao-checkout-input-container {
+                      width: 100%!important ;
+                    }
+                    @media screen and (min-width: 600px) {
+                      #cartao-modal-box .cartao-checkout-input-container {
+                        width: 100%;
+
+                      }
+                      .dadoscartao{
+                        width: 405px;
+                        padding: 10px
+                      }
+                      .cartao-checkout-step{
+                        position: relative;
+                      }
+                      .dadoscomprador{
+                        width: 100%;
+                        padding: 10px
+                      }
+                      .dadoscartao{
+                        margin: auto;
+                      }
+
+                      #cartao-checkout-card-container {
+                        margin: auto;
+                      }
+
+                    }
+
+
+
+                    @media screen and (min-width: 1200px){
+                      #cartao-checkout-card-container{
+                        float: left;
+                        margin: 0px 10px;
+                        margin-bottom: 10px;
+                      }
+                      .dadoscartao{
+                        float: left;
+                        width: 340px;
+                      }
+                      #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-cvv-container {
+                        float: left;
+                        width: 92px;
+                      }
+                    }
+
+                    @media screen and (max-width: 991px) and (min-width: 740px) {
+                      #cartao-checkout-card-container{
+                        float: left;
+                        margin: 0px 10px;
+                        margin-bottom: 10px;
+                      }
+                      .dadoscartao{
+                        width: 310px;
+                        float: left;
+                      }
+                      #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-expiration-container {
+                        width: 190px;
+                      }
+                      #cartao-modal-box-step-credit-card-information #cartao-checkout-credit-card-cvv-container {
+                        width: 92px;
+                      }
+                    }
+
+                    #cartao-checkout-installments-container{
+                      width: 100%!important;
+                    }
+                    #cartao-modal-box h3{
+                      color:#fff;
+                    }
+
+                    .escolha_cartao{
+                      display: inline-block;
+                      border: 2px solid;
+                      border-radius: 10px;
+                      padding: 4px;
+                      cursor: pointer;
+                    }
+
+                    </style>
+
+                    <div id="cartao-checkout-ui">
+                    <div id="cartao-modal-box">
+                    <ul class="pagarme-checkout-step-indicator no-mobile" style="display: none;"></ul>
+                    <div style="padding-bottom: 15px;">
+                    <p><h3>Escolha um Cart&atilde;o</h3></p>
+                      <?php if($ativa_electron=='1'){?>
+                        <div class="escolha_cartao" id="caixa_debito" style="display: inline-block;" onclick="tipoCartao('debito')">
+                      <b>D&eacute;bito</b><br>
+                      <span href="javascript:void(0);" >
+                      <img class="ccs_tipo" id="debito" width="65" src="images/cartao.png" border="0">
+                      </span>
+                      </div>
+                      <?php }?>
+
+                      <div class="escolha_cartao" id="caixa_credito" style="display: inline-block;" onclick="tipoCartao('credito')">
+                      <b>Cr&eacute;dito</b><br>
+                      <span href="javascript:void(0);" >
+                      <img class="ccs_tipo" id="credito" width="65" src="images/cartao.png  " border="0">
+                      </span>
+                      <input type="hidden" name="tipo_cartao" id="tipo_cartao">
+
+                      </div>
+                      </div>
+
+                      <div class="cartao-checkout-step" id="cartao-modal-box-step-credit-card-information">
+
+
+                      <div class="error-message" style="display: block">
+                      <a id="meio_parcelado_titulo"></a>
+                      </div>
+
+
+
+                      <!--cartao-->
+                      <div id="cartao-checkout-card-container">
+                      <div class="card">
+                      <div class="front">
+                      <p class="general expiration-label field">Valido ate</p>
+                      <p class="general number field">.... .... .... ....</p>
+                      <p class="general expiration field">MM/AA</p>
+                      <p class="general name field">Nome Completo</p>
+
+                      <p class="amex cvv field"></p>
+                      <p class="amex expiration-label field">Valido ate</p>
+                      <p class="amex number field"></p>
+                      <p class="amex expiration field"></p>
+                      <p class="amex name field"></p>
+                      </div>
+                      <div class="back">
+                      <p class="cvv field"></p>
+                      </div>
+                      </div>
+                      </div>
+
+
+
+
+                      <div class="dadoscartao">
+                      <div class="form-group cartao-checkout-input-container brand-display">
+                      <input placeholder="Número" pattern="[0-9]*" onkeypress="return isNumberKey(event)" maxlength="19" class="naocolecopie"  type="text" name="numero_cartao" id="numero_cartao" value="" />
+                      <span class="brand-icon"></span>
+                      <span class="cartao-checkout-success-mark icon-pg-checkout-success"></span>
+                      <span class="cartao-checkout-error-mark icon-pg-checkout-error"></span>
+                      </div>
+                      <div class="form-group cartao-checkout-input-container">
+                      <input  name="nometitular" id="nometitular"  placeholder="Nome (igual no cartão)" type="text" />
+                      <span class="cartao-checkout-success-mark icon-pg-checkout-success"></span>
+                      <span class="cartao-checkout-error-mark icon-pg-checkout-error"></span>
+                      </div>
+                      <div id="cartao-checkout-credit-card-expiration-container" class="form-group cartao-checkout-input-container">
+                      <input id="cartao-modal-box-credit-card-expiration" name="cartao-credit-card-expiration" placeholder="Validade (MM/AA)" type="text" pattern="[0-9]*" />
+                      <span class="cartao-checkout-success-mark icon-pg-checkout-success"></span>
+                      <span class="cartao-checkout-error-mark icon-pg-checkout-error"></span>
+                      </div>
+                      <div id="cartao-checkout-credit-card-cvv-container" class="form-group cartao-checkout-input-container">
+                      <input  placeholder="CVV" pattern="[0-9]*" onkeypress="return isNumberKey(event)" class="naocolecopie" type="text" name="cod_cartao" id="cod_cartao" value="" maxlength="4">        </div>
+                      <input type="hidden" value="" id="cc_oculto" name="cc_oculto">
+                      <span class="cartao-checkout-success-mark icon-pg-checkout-success"></span>
+                      <span class="cartao-checkout-error-mark icon-pg-checkout-error"></span>
+
+                      <div  id="cartao-checkout-installments-container"   class="form-group cartao-checkout-input-container">
+                      <div class="pretty-select-container">
+                      <span class="placeholder installments-value">Parcelas</span>
+                      <img src="images/select-icon.png" />
+
+                      <select id="lista_parcelas_parcelado" placeholder="Parcelas"></select>
+                      </div>
+                      <span class="cartao-checkout-success-mark icon-pg-checkout-success"></span>
+                      <span class="cartao-checkout-error-mark icon-pg-checkout-error"></span>
+                      </div>
+                      </div>
+
+
+                      <div class="dadoscomprador">
+                      <div class="form-group cartao-checkout-input-container brand-display">
+                      <input type="text" style="width: 100%;" class="telefone naocolecopie" placeholder="Telefone" name="telefone_parcelado" id="telefone_parcelado" value="">
+                      <span class="brand-icon"></span>
+                      <span class="cartao-checkout-success-mark icon-pg-checkout-success"></span>
+                      <span class="cartao-checkout-error-mark icon-pg-checkout-error"></span>
+                      </div>
+                      <div class="form-group cartao-checkout-input-container brand-display">
+                      <input   maxlength="11" type="text" style="width: 100%;"  placeholder="CPF"  class="cpf naocolecopie" name="cpf" id="cpf_parcelado" value="">
+                      <span class="brand-icon"></span>
+                      <span class="cartao-checkout-success-mark icon-pg-checkout-success"></span>
+                      <span class="cartao-checkout-error-mark icon-pg-checkout-error"></span>
+                      </div>
+                      </div>
+
+
+                      </div>
+
+                      </div>
+                      </div>
+
+
+                      <div class="buttons" id="tela_cielo_pagamento">
+
+                      <div id="tab-parcelado"> </div>
+                      </div>
+
+                      <script type="text/javascript">
+                      <!--
+                      //funcoes
+                      function PagarParcelado(){
+                        var titular = $("#nometitular").val();
+                        var bandeira = $("#cc_oculto").val();
+                        if(titular==''){
+
+                          $("#nometitular").focus();
+                          $('.error-message').show();
+                          $('.error-message').html('<span>Digite o Nome do titular!</span>');
+                          return false;
+                        }
+                        var tel = $("#telefone_parcelado").val();
+                        if(tel==''){;
+                          $('.error-message').show();
+                          $('.error-message').html('<span>Digite o Telefone do titular!</span>');
+                          $("#telefone_parcelado").focus();
+                          return false;
+                        }
+                        var cpf = $("#cpf_parcelado").val();
+                        if(cpf==''){
+                          $('.error-message').show();
+                          $('.error-message').html('<span>Digite o CPF do titular!</span>');
+                          $("#cpf_parcelado").focus();
+                          return false;
+                        }
+                        if(ValidarCPF(cpf)){
+                          $('.error-message').show();
+                          $('.error-message').html('<span>Digite um CPF Valido!</span>');
+                          $("#cpf_parcelado").focus();
+                          return false;
+                        }
+
+                        var num = $("#numero_cartao").val();
+                        if(num==''){
+                          $('.error-message').show();
+                          $('.error-message').html('<span>Digite o Numero do cartao!</span>');
+                          $("#numero_cartao").focus();
+                          return false;
+                        }
+
+                        if(jcv_luhnCheck(num) == false){
+                          $('.error-message').show();
+                          $('.error-message').html('<span>Digite um Numero Valido do cartao!</span>');
+                          $("#numero_cartao").focus();
+                          return false;
+                        }
+
+
+
+                        var validade = $("#cartao-modal-box-credit-card-expiration").val();
+                        var mes='', ano='';
+                        if(validade){
+                          validade = validade.split('/');
+                          mes = validade[0];
+                          ano = validade[1];
+                        }
+
+                        //  var mes = $("#mes_cartao").val();
+                        if(mes==''){
+                          $('.error-message').show();
+                          $('.error-message').html('<span>Selecione o Mes de validado do cartao!</span>');
+                          $("#mes_cartao").focus();
+                          return false;
+                        }
+                        //var ano = $("#ano_cartao").val();
+                        if(ano==''){
+                          $('.error-message').show();
+                          $('.error-message').html('<span>Selecione o Ano de validado do cartao!</span>');
+                          $("#ano_cartao").focus();
+                          return false;
+                        }
+                        ano = '20'+ano;
+
+                        var cod = $("#cod_cartao").val();
+                        if(cod==''){
+                          $('.error-message').show();
+                          $('.error-message').html('<span>Digite o Codigo de Seguranca do cartao!</span>');
+
+                          $("#cod_cartao").focus();
+                          return false;
+                        }
+                        if(bandeira=='amex' && cod.length<4){
+                          $('.error-message').show();
+                          $('.error-message').html('<span>Para AMEX codigo de seguranca de 4 digitos!</span>');
+                          $("#cod_cartao").focus();
+                          return false;
+                        }
+                        var parcela = $("#lista_parcelas_parcelado").val();
+                        if(parcela==''){
+                          $('.error-message').show();
+                          $('.error-message').html('<span>Selecione o valor desejado!</span>');
+                          $('#cartao-checkout-installments-containerr').removeClass("focus").removeClass("cartao-error").addClass("cartao-success")
+
+                          return false;
+                        }
+
+                        //oculta os meios
+                        //$('#tela_cielo_pagamento').hide();
+                        //$('#tela_cielo_aguarde').show();
+                        VaiOver();
+
+                        cpf = cpf.replace('.', '');
+                        cpf = cpf.replace('.', '');
+                        cpf = cpf.replace('-', '');
+
+                        var request = $.ajax({//post
+                          url: "app/buypageloja/gtw.php",
+                          type: "POST",
+                          data: {"nome": titular, "telefone": tel, "cpf": cpf, "cartao": num, "mes": mes, "ano": ano, "cod": cod, "parcela": parcela, "ped": '<?php echo $pedido['order_id'];?>',"hash": "<?php echo md5($pedido['order_id']);?>"},
+                          dataType: "json"
+                        });
+
+                        request.done(function(data) {//verifica o resultado
+
+                          if(data.erro=='true'){
+                            VemOver();
+                            alert(data.msg);
+                            return false;
+                          }else if(data.erro=='debito'){
+                            VemOver();
+                            DebitoVaiOver(data.msg);
+                          }else if(data.erro=='false'){
+                            location.href = "index.php?route=payment/buypageloja5/recibo&token="+data.tid+"";
+                            return true;
+                          }
+
+                        });
+
+                        request.fail(function(jqXHR, textStatus) {//caso haja erro
+                          alert( "Falha: " + textStatus );
+                        });
+
+                      }
+
+                      function Parcelado(meio){
+
+                        //mostra a bandeira ativa
+                        $("#cc_oculto").val(meio);
+                        $(".ccs_loja5").css({ opacity: 0.1 });
+                        $("#"+ meio ).css({ opacity: 1 });
+                        //mostra o form
+                        $("#pagamento_parcelado").show();
+                        $("#meio_parcelado_titulo").html('<img src="app/buypageloja/images/'+meio+'.gif" border="0">');
+
+                        $("#cartao-checkout-installments-container").show();
+
+                        //max num cartao
+                        if(meio=='diners'){
+                          SetMaxLength(14);
+                        }else if(meio=='aura'){
+                          SetMaxLength(19);
+                        }else{
+                          SetMaxLength(16);
+                        }
+
+                        $.getJSON('app/buypageloja/get.parcelas.parcelado.php?id='+meio+'&total=<?php echo $pedido['total'];?>&hash=<?php echo md5($pedido['total']);?>', function(data) {
+                          var items = '';
+
+                          $.each(data, function(key, val) {
+                            items += '<option value="' + key + '">' + val + '</option>';
+                          });
+                          $('#lista_parcelas_parcelado').html(items);
+                        });
+                      }
+
+                      function Debito(meio){
+                        //mostra a bandeira ativa
+                        $("#cc_oculto").val(meio);
+                        $(".ccs_loja5").css({ opacity: 0.1 });
+                        $("#"+ meio ).css({ opacity: 1 });
+                        //mostra o form
+                        $("#pagamento_parcelado").show();
+                        $("#meio_parcelado_titulo").html('<img src="app/buypageloja/images/'+meio+'.gif" border="0">');
+                        $("#cartao-checkout-installments-container").show();
+
+                        //max num cartao
+                        if(meio=='diners'){
+                          SetMaxLength(14);
+                        }else if(meio=='aura'){
+                          SetMaxLength(19);
+                        }else{
+                          SetMaxLength(16);
+                        }
+                        //aplica mascaras
+
+                        //pupula a lista de parcelas
+                        $.getJSON('app/buypageloja/get.parcelas.debito.php?id='+meio+'&total=<?php echo $pedido['total'];?>&hash=<?php echo md5($pedido['total']);?>', function(data) {
+                          var items = '';
+                          $.each(data, function(key, val) {
+                            items += '<option value="' + key + '">' + val + '</option>';
+                          });
+                          $('#lista_parcelas_parcelado').html(items);
+                        });
+                      }
+                      //-->
+                      </script>
+
+
+                      <style>
+                      #tab-parcelado a{
+                        display:inline-block!important;
+                      }
+                      </style>
+
+                      <div class="buttons" id="tela_cielo_aguarde" style="display:none;">
+                      <div style="padding: 10px 10px 10px 10px;">
+                      <h3>Aguarde o resultado da transa&ccedil;&atilde;o...</h3>
+                      </div>
+                      </div>
+
+
+                      <div class="buttons">
+                        <div class="pull-right">
+                          <input type="button" onclick="PagarParcelado()" value="Pagamento Seguro!" id="button-confirm" class="btn btn-primary" />
+                        </div>
+                      </div>

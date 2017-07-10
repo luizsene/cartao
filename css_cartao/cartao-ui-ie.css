@@ -1,0 +1,16 @@
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  #cartao-checkout-card-container .card .back {
+    display: none; }
+  #cartao-checkout-card-container .card .front {
+    display: block; }
+  #cartao-checkout-card-container .card .front,
+  #cartao-checkout-card-container .card .back {
+    backface-visibility: visible; }
+  #cartao-checkout-card-container .card.flipped .back {
+    display: block; }
+  #cartao-checkout-card-container .card.flipped .front {
+    display: none; }
+  #cartao-checkout-card-container .card.flipped.amex .back {
+    display: none; }
+  #cartao-checkout-card-container .card.flipped.amex .front {
+    display: block; } }
